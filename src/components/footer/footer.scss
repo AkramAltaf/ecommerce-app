@@ -1,0 +1,75 @@
+@use "../../styles/variables" as *;
+
+.footer {
+  background-color: $primary-color; // Primary color as background
+  color: $text-light; // Ensuring contrast for readability
+  padding: 3rem 0;
+  box-shadow: $box-shadow;
+  border-top: 2px solid darken($primary-color, 10%); // Slightly darker border for separation
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-logo img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+
+    a {
+      color: $text-light;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: lighten($text-light, 20%);
+      }
+    }
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 15px;
+
+    a {
+      color: $text-light;
+      transition: color 0.3s;
+
+      &:hover {
+        color: lighten($text-light, 20%);
+      }
+
+      svg {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  .footer-copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

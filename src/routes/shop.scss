@@ -1,0 +1,29 @@
+@use "../styles/variables" as *;
+
+.shop-container {
+  padding: 40px 0;
+  text-align: center;
+
+  .shop-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $text-color;
+    margin-bottom: 20px;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    // align-items: center;
+  }
+
+  .loading,
+  .error {
+    font-size: 1.5rem;
+    color: $primary-color;
+    text-align: center;
+    margin-top: 50px;
+  }
+}

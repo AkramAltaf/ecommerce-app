@@ -1,0 +1,31 @@
+@use "variables" as *;
+
+body {
+  background-color: $bg-light-blue;
+  color: $text-color;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background-color: $primary-color;
+  color: $card-background;
+  border: 1px solid $border-color;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.card {
+  background-color: $card-background;
+  box-shadow: 0 2px 4px $shadow-color;
+  border: 1px solid $border-color;
+  padding: 20px;
+  border-radius: 8px;
+}

@@ -1,0 +1,120 @@
+@use "../../styles/variables" as *;
+
+header {
+  background-color: $bg-light-blue;
+  box-shadow: $box-shadow;
+  padding: 15px 0;
+  z-index: 999;
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+
+    input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid $border-color;
+      border-radius: 20px;
+      outline: none;
+      font-size: 1rem;
+      color: $text-color;
+      transition: border 0.3s;
+
+      &:focus {
+        border-color: $primary-color;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    a {
+      display: flex;
+      align-items: center;
+      color: $dark-grey;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary-color;
+      }
+
+      .cart-icon {
+        position: relative;
+      }
+  
+      .cart-badge .MuiBadge-badge {
+        font-size: 0.75rem;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 6px;
+        background-color: $secondary-color;
+        color: $bg-light-blue;
+      }
+
+      svg {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  header {
+    .header-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    nav {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .search-bar {
+      order: 2;
+      margin-top: 10px;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .actions {
+      order: 3;
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Wireless Bluetooth Headphones",
+        "description": "High-quality over-ear wireless headphones with noise cancellation.",
+        "price": 99.99,
+        "category": "Electronics",
+        "image": "/images/headphones.jpg",
+        "stock": 50,
+        "rating": 4.5
+      },
+      {
+        "id": 2,
+        "name": "Smartphone 5G",
+        "description": "Latest 5G smartphone with high-resolution display and advanced camera.",
+        "price": 699.99,
+        "category": "Electronics",
+        "image": "/images/smartphone.png",
+        "stock": 30,
+        "rating": 4.7
+      },
+      {
+        "id": 3,
+        "name": "Men's Running Shoes",
+        "description": "Lightweight and comfortable running shoes for everyday use.",
+        "price": 59.99,
+        "category": "Fashion",
+        "image": "/images/shoes.jpg",
+        "stock": 100,
+        "rating": 4.3
+      },
+      {
+        "id": 4,
+        "name": "Leather Wallet",
+        "description": "Premium quality leather wallet with multiple card slots.",
+        "price": 29.99,
+        "category": "Accessories",
+        "image": "/images/wallet.jpg",
+        "stock": 75,
+        "rating": 4.6
+      },
+      {
+        "id": 5,
+        "name": "Gaming Laptop",
+        "description": "Powerful gaming laptop with high-end graphics and fast processor.",
+        "price": 1299.99,
+        "category": "Computers",
+        "image": "/images/laptop.jpg",
+        "stock": 20,
+        "rating": 4.8
+      }
+    ]
+  }
+  

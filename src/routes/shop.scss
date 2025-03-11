@@ -27,3 +27,20 @@
     margin-top: 50px;
   }
 }
+
+.loading-container, 
+.error-container {
+  height: fit-content;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.error-message {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}

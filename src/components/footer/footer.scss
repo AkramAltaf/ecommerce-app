@@ -5,7 +5,7 @@
   color: $text-light; // Ensuring contrast for readability
   padding: 3rem 0;
   box-shadow: $box-shadow;
-  border-top: 2px solid darken($primary-color, 10%); // Slightly darker border for separation
+  border-top: 2px solid $primary-color; // Slightly darker border for separation
 
   .footer-content {
     display: flex;
@@ -37,7 +37,7 @@
       transition: color 0.3s;
 
       &:hover {
-        color: lighten($text-light, 20%);
+        color: $text-light;
       }
     }
   }
@@ -51,7 +51,7 @@
       transition: color 0.3s;
 
       &:hover {
-        color: lighten($text-light, 20%);
+        color: $text-light;
       }
 
       svg {

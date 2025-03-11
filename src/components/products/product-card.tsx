@@ -37,7 +37,7 @@ const ProductCard: React.FC<IProduct> = ({
           {description}
         </Typography>
         <Typography variant="h6" className="price">
-          ${price.toFixed(2)}
+          Rs.{price.toFixed(2)}
         </Typography>
         <Button
           variant="contained"

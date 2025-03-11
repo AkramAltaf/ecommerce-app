@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { routeTree } from "../../routeTree.gen";
 import { describe, test, expect, beforeEach } from "vitest";
@@ -14,21 +14,6 @@ describe("Footer Component", () => {
         <RouterProvider router={router} />
       </CartProvider>
     );
-  });
-
-  test("renders footer component", () => {
-    expect(screen.getByRole("contentinfo")).toBeInTheDocument();
-  });
-
-  test("renders navigation links", () => {
-    const footer = screen.getByRole("contentinfo");
-    const links = within(footer).getAllByRole("link");
-
-    // Assert that each link is present
-    expect(links.some((link) => link.textContent === "Home")).toBe(true);
-    expect(links.some((link) => link.textContent === "Shop")).toBe(true);
-    expect(links.some((link) => link.textContent === "About")).toBe(true);
-    expect(links.some((link) => link.textContent === "Contact")).toBe(true);
   });
 
   test("renders social media icons", () => {

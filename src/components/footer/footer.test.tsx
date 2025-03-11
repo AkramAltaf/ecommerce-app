@@ -1,19 +1,20 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { routeTree } from "../../routeTree.gen";
 import { describe, test, expect, beforeEach } from "vitest";
 import { CartProvider } from "../../contexts/cart-context";
 
-// Mock the router setup
 const router = createRouter({ routeTree });
 
 describe("Footer Component", () => {
-  beforeEach(() => {
-    render(
-      <CartProvider>
-        <RouterProvider router={router} />
-      </CartProvider>
-    );
+  beforeEach(async () => {
+    await act(async () => {
+      render(
+        <CartProvider>
+          <RouterProvider router={router} />
+        </CartProvider>
+      );
+    });
   });
 
   test("renders social media icons", () => {

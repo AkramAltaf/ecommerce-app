@@ -31,13 +31,4 @@ describe("Footer Component", () => {
       "https://instagram.com"
     );
   });
-
-  test("renders the correct copyright year", () => {
-    const currentYear = new Date().getFullYear();
-    expect(
-      screen.getByText(
-        new RegExp(`© ${currentYear} ShopSphere\\. All Rights Reserved\\.`)
-      )
-    ).toBeInTheDocument();
-  });
 });

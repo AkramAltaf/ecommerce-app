@@ -18,7 +18,10 @@ interface CartContextType {
   updateCartItemQuantity: (id: number, quantity: number) => void;
 }
 
-const CartContext = createContext<CartContextType | undefined>(undefined);
+// eslint-disable-next-line react-refresh/only-export-components
+export const CartContext = createContext<CartContextType | undefined>(
+  undefined
+);
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,

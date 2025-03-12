@@ -16,7 +16,7 @@ export const Route = createFileRoute("/shop")({
   component: RouteComponent,
 });
 
-function RouteComponent() {
+export function RouteComponent() {
   const {
     data: products,
     isLoading,
@@ -26,7 +26,7 @@ function RouteComponent() {
   } = useQuery({
     queryKey: ["products"],
     queryFn: fetchProducts,
-    retry: 2, // Automatically retry 2 times before failing
+    retry: 2,
   });
 
   if (isLoading) {

@@ -42,7 +42,9 @@ export function RouteComponent() {
     return (
       <div className="error-container">
         <Typography className="error-message" color="error">
-          {error instanceof Error ? error.message : "Unknown error occurred."}
+          {error instanceof Error
+            ? "Failed to fetch products"
+            : "Unknown error occurred."}
         </Typography>
         <Button variant="contained" color="primary" onClick={() => refetch()}>
           Retry

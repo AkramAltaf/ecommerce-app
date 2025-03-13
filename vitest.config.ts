@@ -7,7 +7,15 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/setupTests.ts'],
-    reporters: 'verbose',
+    environmentOptions: {
+      jsdom: {
+        // Fix for jsdom issues with mutations
+        pretendToBeVisual: true,
+      },
+    },
+    coverage: {
+      provider: 'v8', // Make sure coverage works with Stryker
+      reporter: ['text', 'json', 'html'],
+    },
   },
 });
-

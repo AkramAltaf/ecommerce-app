@@ -27,7 +27,6 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [cart, setCart] = useState<CartItem[]>(() => {
-    // Load cart data from localStorage
     if (typeof window !== "undefined") {
       const storedCart = localStorage.getItem("cart");
       return storedCart ? JSON.parse(storedCart) : [];
@@ -35,7 +34,6 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     return [];
   });
 
-  // Save cart data to localStorage whenever it updates
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);

@@ -12,10 +12,10 @@ import { useCart } from "../contexts/cart-context";
 import "./cart.scss";
 
 export const Route = createFileRoute("/cart")({
-  component: RouteComponent,
+  component: CartComponent,
 });
 
-function RouteComponent() {
+export function CartComponent() {
   const { cart, removeFromCart, updateCartItemQuantity } = useCart();
   const navigate = useNavigate();
 

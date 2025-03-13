@@ -13,10 +13,10 @@ import {
 import "./shop.scss";
 
 export const Route = createFileRoute("/shop")({
-  component: RouteComponent,
+  component: ShopComponent,
 });
 
-export function RouteComponent() {
+export function ShopComponent() {
   const {
     data: products,
     isLoading,

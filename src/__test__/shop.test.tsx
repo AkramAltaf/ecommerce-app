@@ -2,7 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { describe, expect, it, vi, Mock } from "vitest";
 import { fetchProducts } from "../services/products-service";
-import { RouteComponent } from "../routes/shop";
+import { ShopComponent } from "../routes/shop";
 import { CartProvider } from "../contexts/cart-context";
 
 vi.mock("../services/products-service", () => ({
@@ -26,7 +26,7 @@ describe("Shop Page", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <CartProvider>
-          <RouteComponent />
+          <ShopComponent />
         </CartProvider>
       </QueryClientProvider>
     );
@@ -54,7 +54,7 @@ describe("Shop Page", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <CartProvider>
-          <RouteComponent />
+          <ShopComponent />
         </CartProvider>
       </QueryClientProvider>
     );

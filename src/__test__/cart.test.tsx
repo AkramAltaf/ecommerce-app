@@ -4,7 +4,6 @@ import { describe, expect, it, Mock, vi } from "vitest";
 import { CartComponent } from "../routes/cart";
 import { CartProvider, useCart } from "../contexts/cart-context";
 
-// ✅ Mock the cart context
 vi.mock("../contexts/cart-context", async () => {
   const actual = await vi.importActual<
     typeof import("../contexts/cart-context")
@@ -15,10 +14,8 @@ vi.mock("../contexts/cart-context", async () => {
   };
 });
 
-// ✅ Define mockNavigate at the top
 const mockNavigate = vi.fn();
 
-// ✅ Mock useNavigate with the mockNavigate function
 vi.mock("@tanstack/react-router", async () => {
   const actual = await vi.importActual<typeof import("@tanstack/react-router")>(
     "@tanstack/react-router"
@@ -73,7 +70,6 @@ describe("Cart Page", () => {
       </QueryClientProvider>
     );
 
-    // ✅ Check if items are displayed
     expect(screen.getByText("Item 1")).toBeInTheDocument();
     expect(screen.getByText("Rs.100.00 × 2")).toBeInTheDocument();
 
@@ -101,7 +97,6 @@ describe("Cart Page", () => {
       </QueryClientProvider>
     );
 
-    // ✅ Check total amount calculation
     expect(screen.getByText("Rs. 400.00")).toBeInTheDocument();
   });
 

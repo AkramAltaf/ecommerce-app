@@ -2,13 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { Container, Badge, IconButton } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { useState } from "react";
 import "./header.scss";
 import { useCart } from "../../contexts/cart-context";
 
 const Header = () => {
-  const { cart } = useCart();
-  const [search, setSearch] = useState("");
+  const { cart, searchQuery, setSearchQuery } = useCart();
 
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
 
@@ -26,8 +24,8 @@ const Header = () => {
             <input
               type="text"
               placeholder="Search products..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
           <div className="actions">

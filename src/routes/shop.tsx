@@ -11,12 +11,15 @@ import {
   CircularProgress,
 } from "@mui/material";
 import "./shop.scss";
+import { useCart } from "../contexts/cart-context";
 
 export const Route = createFileRoute("/shop")({
   component: ShopComponent,
 });
 
 export function ShopComponent() {
+  const { searchQuery } = useCart();
+
   const {
     data: products,
     isLoading,
@@ -53,13 +56,20 @@ export function ShopComponent() {
     );
   }
 
+  const filteredProducts = products?.filter((product: IProduct) =>
+    product.name.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase())
+  );
+
   return (
     <Container className="shop-container">
       <h1 className="shop-title">Latest Products</h1>
       <div className="product-grid">
-        {products?.map((product: IProduct) => (
+        {filteredProducts?.map((product: IProduct) => (
           <ProductCard key={product.id} {...product} />
         ))}
+        {filteredProducts?.length === 0 && (
+          <Typography>No products found</Typography>
+        )}
       </div>
     </Container>
   );

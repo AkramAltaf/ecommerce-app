@@ -16,6 +16,8 @@ interface CartContextType {
   addToCart: (product: IProduct) => void;
   removeFromCart: (id: number) => void;
   updateCartItemQuantity: (id: number, quantity: number) => void;
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -26,6 +28,8 @@ export const CartContext = createContext<CartContextType | undefined>(
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
   const [cart, setCart] = useState<CartItem[]>(() => {
     if (typeof window !== "undefined") {
       const storedCart = localStorage.getItem("cart");
@@ -66,7 +70,14 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, updateCartItemQuantity }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        updateCartItemQuantity,
+        searchQuery,
+        setSearchQuery,
+      }}
     >
       {children}
     </CartContext.Provider>

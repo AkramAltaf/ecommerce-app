@@ -1,12 +1,23 @@
-import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { createRootRoute, Outlet, useLocation } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import "../styles/layout.scss";
 import { Container } from "@mui/material";
+import DashboardLayout from "../components/dashboard-layout/dashboard-layout";
 
 export const Route = createRootRoute({
-  component: () => (
+  component: Component,
+});
+
+function Component() {
+  const location = useLocation();
+  const isDashboard = location.pathname.startsWith("/dashboard");
+  return <>{isDashboard ? <DashboardLayout /> : <HomeComponent />}</>;
+}
+
+function HomeComponent() {
+  return (
     <div className="layout">
       <Header />
       <Container className="main-content">
@@ -15,5 +26,5 @@ export const Route = createRootRoute({
       <Footer />
       <TanStackRouterDevtools />
     </div>
-  ),
-});
+  );
+}

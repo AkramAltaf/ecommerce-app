@@ -19,6 +19,7 @@ const Header = () => {
             <Link to="/">Home</Link>
             <Link to="/shop">Shop</Link>
             <Link to="/about">About</Link>
+            <Link to="/dashboard">Dashboard</Link>
           </nav>
           <div className="search-bar">
             <input

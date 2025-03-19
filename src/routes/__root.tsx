@@ -13,16 +13,27 @@ export const Route = createRootRoute({
 function Component() {
   const location = useLocation();
   const isDashboard = location.pathname.startsWith("/dashboard");
-  return <>{isDashboard ? <DashboardLayout /> : <HomeComponent />}</>;
+
+  return (
+    <>
+      {isDashboard ? (
+        <DashboardLayout>
+          <Outlet />
+        </DashboardLayout>
+      ) : (
+        <HomeLayout>
+          <Outlet />
+        </HomeLayout>
+      )}
+    </>
+  );
 }
 
-function HomeComponent() {
+function HomeLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="layout">
       <Header />
-      <Container className="main-content">
-        <Outlet />
-      </Container>
+      <Container className="main-content">{children}</Container>
       <Footer />
       <TanStackRouterDevtools />
     </div>

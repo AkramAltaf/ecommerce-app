@@ -8,6 +8,7 @@ const Sidebar = () => {
       <nav className="sidebar-links">
         <Link to="/">Home</Link>
         <Link to="/dashboard/reports">Reports</Link>
+        <Link to="/dashboard/settings">Settings</Link>
       </nav>
     </div>
   );

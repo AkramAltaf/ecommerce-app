@@ -10,7 +10,9 @@ function About() {
   return (
     <div>
       <Typography>Hello from About!</Typography>
-      <InfoPopover content="I want this component to be reusable where I can pass just the content as mandatory props and icon as optional prop to use different icons based on the requirement." />
+      <div style={{ marginTop: "150px" }}>
+        <InfoPopover content="I want this component to be reusable where I can pass just the content as mandatory props and icon as optional prop to use different icons based on the requirement." />
+      </div>
     </div>
   );
 }

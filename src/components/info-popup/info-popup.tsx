@@ -1,10 +1,10 @@
 import { useState, ReactNode } from "react";
 import { Popover, IconButton, Typography } from "@mui/material";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import "./info-popup.scss"; // Import the SCSS file for styling
+import "./info-popup.scss";
 
 interface InfoPopupProps {
-  content: string | ReactNode; // Text or JSX content to display
+  content: string | ReactNode; // Accepts string or JSX
   icon?: ReactNode; // Custom icon (optional), default is HelpOutlineIcon
 }
 
@@ -23,6 +23,7 @@ const InfoPopup: React.FC<InfoPopupProps> = ({
   };
 
   const open = Boolean(anchorEl);
+  const id = open ? "info-popover" : undefined;
 
   return (
     <>
@@ -30,6 +31,7 @@ const InfoPopup: React.FC<InfoPopupProps> = ({
         {icon}
       </IconButton>
       <Popover
+        id={id}
         open={open}
         anchorEl={anchorEl}
         onClose={handleClose}
@@ -38,13 +40,13 @@ const InfoPopup: React.FC<InfoPopupProps> = ({
           horizontal: "center",
         }}
         transformOrigin={{
-          vertical: "bottom", // Arrow starts from the bottom of popover
+          vertical: "bottom", // Arrow aligns with bottom of popover
           horizontal: "center",
         }}
         className="info-popup"
+        disableScrollLock={true} // Prevents unnecessary scrollbars
       >
         <div className="popover-content">
-          <div className="popover-arrow" />
           <Typography className="popover-text">{content}</Typography>
         </div>
       </Popover>
